@@ -1,0 +1,120 @@
+#sideBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+  z-index: 99;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  transition: all .5s linear;
+  width: 17%;
+}
+
+#sideBar > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#sideBar > div svg {
+  transform: rotate(180deg);
+  font-size: 60pt;
+  color: var(--blue2);
+}
+#sideBar ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 50%;
+}
+
+#sideBar ul a {
+  display: flex;
+  text-decoration: none;
+  font-size: 13pt;
+  align-items: center;
+  gap: 15px;
+  width: 90%;
+  height: 70px;
+  padding-left: 10px;
+  color: var(--blue2);
+  border-radius: 4px;
+  transition: all .3s linear;
+}
+#sideBar > span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: all .6s linear;
+  cursor: pointer;
+}
+#sideBar > span:active{
+  scale: 0.7;
+  background-color: var(--blue);
+}
+#sideBar > span div {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue2);
+  color: var(--white);
+  border-radius: 50%;
+}
+#sideBar > span aside {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#sideBar button {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 55px;
+  font-size: 13pt;
+  border-radius: 5px;
+  background-color: var(--black);
+  color: var(--white);
+}
+
+ #header{
+  display: none;
+ }
+@media screen and (max-width : 1024px) {
+  #sideBar{
+    width: 0%;
+    padding: 0;
+  }
+  #header{
+    width: 100%;
+    background-color: var(--black);
+    z-index: 9999;
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  #header > svg{
+    margin-right: 20px;
+    font-size: 20pt;
+    cursor: pointer;
+    transition: all .5s linear;
+  }
+  #header > svg:active{
+    scale: 0.7;
+  }
+  #sideBar button {width: 50%;
+  margin-left: 10px;}
+}

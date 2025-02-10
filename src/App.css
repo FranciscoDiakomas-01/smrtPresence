@@ -1,0 +1,60 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  overflow-x: hidden;
+}
+
+#App{
+  background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100dvw;
+  min-height: 100dvh;
+}
+#App > #loader{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  position: fixed;
+  justify-self: center;
+  height: 100dvh;
+  width: 100dvw;
+}
+#App > section{
+  position: absolute;
+  right: 0;
+  width: 78%;
+  background-color: var(--gray);
+  min-height: 100dvh;
+  top: 0;
+}
+
+button{
+  cursor: pointer;
+  transition: all .3s linear;
+  border: none;
+  font-size: 11pt;
+}
+
+button:active{
+  scale: 0.8;
+}
+
+input , select{
+  border: solid 1px var(--blue2);
+  min-height: 45px;
+  padding-left: 10px;
+  font-size: 12pt;
+  background-color: transparent;
+  outline: none;
+}
+
+@media screen and (max-width : 1024px) {
+  #App > section{
+  width: 97%;
+  position: relative;
+  margin-top: -45dvh;
+}
+}

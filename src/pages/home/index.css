@@ -1,0 +1,215 @@
+#home{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding:10px;
+  height: auto;
+  padding-bottom: 30px;
+  padding-top: 20px;
+  width: 99%;
+  position: relative;
+}
+
+section > div #loader{
+  display: flex;
+  place-self: center;
+  height: 100vh;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#home > aside{
+  width: 99%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#home > aside span:first-of-type{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  width: 100%;
+}
+#home > aside span:first-of-type div{
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  height: 150px;
+  padding: 20px;
+  border-radius: 5px;
+  gap: 20px;
+  box-shadow: 4px 4px 4px #8281813c;
+  background-color: var(--blue2);
+  color: var(--white);
+  position: relative;
+}
+#home > aside span:first-of-type div svg{
+  position: absolute;
+  right: 10px;
+  font-size: 90pt;
+  opacity: 0.4;
+}
+#home > aside span:first-of-type div button{
+  width: 200px;
+  height: 37px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--white);
+  color: var(--blue2);
+  font-size: 11pt;
+}
+#home > aside span:first-of-type div h2{
+  font-size: 22pt;
+}
+#home > aside span:first-of-type div h3{
+  font-size: 30pt;
+}
+#home >  button{
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  height: 45px;
+  box-shadow: 4px 4px 4px #00000021;
+  background-color: var(--gray2);
+  color: var(--white);
+  border-radius: 4px;
+}
+
+#home >  span{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+#home >  span > div{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 50px;
+}
+
+#home >  span > div div{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px;
+  min-height: 70px;
+  background-color: var(--white);
+  box-shadow: 4px 4px 3px #1d1c1c18;
+  border-radius: 4px;
+}
+
+#home >  span > div div span{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+#home >  span > div div > div span:first-of-type{
+  display: flex;
+  width: 80px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+#home >  span  article{
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home >  span  article form{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14pt;
+}
+#home >  span  article button{
+  background-color: var(--blue2);
+  color: var(--white);
+  height: 47px;
+  width: 60px;
+  margin-left: -20px;
+}
+#home >  span  article input{
+  width: 400px;
+}
+#home footer{
+  width: 97%;
+  display: flex;
+  justify-content: space-between;
+}
+#home footer button{
+  width: 70px;
+  height: 45px;
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0 5px;
+  font-size: 15pt;
+  border-radius: 5px;
+}
+
+#home table {
+  width: 98%;
+}
+#home table tr {
+  height: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+
+#home > table td:last-of-type{
+  width: 220px;
+}
+
+#home table thead tr {
+  background-color: var(--black);
+  color: var(--white);
+}
+#home table tbody tr:nth-last-of-type(even) {
+  background-color: var(--white);
+}
+#home table button {
+  background-color: var(--black);
+  height: 40px;
+  width: 130px;
+  border-radius: 5px;
+  display: flex;
+  place-self: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+#home table td:nth-of-type(4) button{
+  background-color: var(--blue2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 12pt;
+}
+
+#home table tbody tr:hover{
+  background-color: var(--blue);
+}
+
+@media screen and (max-width : 1024px) {
+  #home > aside span:first-of-type{
+  grid-template-columns: 1fr 1fr ;
+}
+#home{
+  display: flex;
+  gap: 20px;
+  padding:10px;
+  height: auto;
+  width: 100%;
+}
+}
