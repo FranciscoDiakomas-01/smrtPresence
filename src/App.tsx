@@ -11,7 +11,7 @@ function App() {
   const [ load , setLoad ] = useState(true)
   const nav = useNavigate()
   useEffect(()=>{
-    if(!isLogged()){
+    if(isLogged()){
       setTimeout(()=>{
         setLoad(false)
       },2500)
