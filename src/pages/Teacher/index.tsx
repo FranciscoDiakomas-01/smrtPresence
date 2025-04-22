@@ -1,9 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import "./index.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { FaBars, FaClock, FaHome, FaQrcode } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TeacherQrcode  from './componets/QrcodeDisplay'
 import { FaChartBar } from "react-icons/fa6";
+import isLogged from "../../services/isLogged";
 export default function Teacher() {
   const [active, setActive] = useState("Inicial");
   const [ showQrd , setShow]  = useState(false)
@@ -26,6 +28,16 @@ export default function Teacher() {
     },
   ];
   const nav = useNavigate()
+    useEffect(()=>{
+      if(isLogged()){
+        setTimeout(()=>{
+        },2500)
+        return
+      }else{
+        nav("/login")
+        return
+      }
+    }, [])
   return (
     <main
       id="teacher"
