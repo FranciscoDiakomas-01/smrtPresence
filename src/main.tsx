@@ -18,10 +18,8 @@ import Teacher from './pages/Teacher/index.tsx'
 import HomeTeacher from './pages/Teacher/Home/index.tsx'
 import TeacherAgenda from './pages/Teacher/Agenda/index.tsx'
 import TeacherDash from './pages/Teacher/DashBoar/index.tsx'
-import TeacherProfile from './pages/Teacher/Profile/index.tsx'
 import HomeCoord from './pages/Coord/index.tsx'
 import HomeScrennCoord from './pages/Coord/Home/index.tsx'
-import CoordProfile from './pages/Coord/Profile/index.tsx'
 const routes = createBrowserRouter([
   {
     path: "/",
@@ -85,10 +83,6 @@ const routes = createBrowserRouter([
         path: "merelatory",
         element: <TeacherDash />,
       },
-      {
-        path: "profile",
-        element: <TeacherProfile />,
-      },
     ],
   },
   {
@@ -98,11 +92,6 @@ const routes = createBrowserRouter([
       {
         path: "/coord",
         element: <HomeScrennCoord />,
-      },
-      
-      {
-        path: "profile",
-        element: <CoordProfile />,
       },
     ],
   },

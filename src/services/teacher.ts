@@ -1,6 +1,6 @@
 export async function getAllTeachers(page: number = 1) {
   const limit = 15;
-  const url = `http://localhost:8080/teachers?limit=${limit}&page=${page}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teachers?limit=${limit}&page=${page}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -11,9 +11,8 @@ export async function getAllTeachers(page: number = 1) {
   return response;
 }
 
-
 export async function getTeacherbyId() {
-  const url = `http://localhost:8080/teacher`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teacher`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -21,11 +20,12 @@ export async function getTeacherbyId() {
     },
   });
   const response = await API.json();
+  console.log(response);
   return response;
 }
 
 export async function deleteTeacherByid(id: number) {
-  const url = `http://localhost:8080/teacher/${id}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teacher/${id}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -37,9 +37,9 @@ export async function deleteTeacherByid(id: number) {
   return response;
 }
 
-export async function getAllTeacherPresence(page: number = 1 , id : number) {
+export async function getAllTeacherPresence(page: number = 1, id: number) {
   const limit = 15;
-  const url = `http://localhost:8080/presence/${id}?limit=${limit}&page=${page}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/presence/${id}?limit=${limit}&page=${page}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -50,7 +50,7 @@ export async function getAllTeacherPresence(page: number = 1 , id : number) {
   return response;
 }
 export async function getTeacherBySearch(text: string) {
-  const url = `http://localhost:8080/teachers/search/${text}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teachers/search/${text}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -62,14 +62,14 @@ export async function getTeacherBySearch(text: string) {
 }
 
 interface Iteacher {
-  name:string;
+  name: string;
   lastname: string;
   email: string;
 }
 
 export async function CreateTeacher(teacher: Iteacher) {
   try {
-    const url = `http://localhost:8080/teacher`;
+    const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teacher`;
     const token = localStorage.getItem("token");
     const API = await fetch(url, {
       headers: {
@@ -80,12 +80,13 @@ export async function CreateTeacher(teacher: Iteacher) {
       body: JSON.stringify(teacher),
     });
     const response = await API.json();
+    console.log(response);
     return response;
   } catch (error) {
-   return error as string
+    console.log(error);
+    return error as string;
   }
 }
-
 
 export interface IVacation {
   id: number;
@@ -95,7 +96,7 @@ export interface IVacation {
 
 export async function Vacation(vacation: IVacation) {
   try {
-    const url = `http://localhost:8080/teacherstatus`;
+    const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teacherstatus`;
     const token = localStorage.getItem("token");
     const API = await fetch(url, {
       headers: {
@@ -111,7 +112,6 @@ export async function Vacation(vacation: IVacation) {
     return error as string;
   }
 }
-
 
 interface ITeacherUpdate {
   name: string;
@@ -129,7 +129,8 @@ export async function updateTeacher(teacher: ITeacherUpdate) {
   if (!teacher.password) {
     teacher.password = teacher.oldpassword;
   }
-  const url = "http://localhost:8080/teacher";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teacher";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -143,11 +144,9 @@ export async function updateTeacher(teacher: ITeacherUpdate) {
   return response;
 }
 
-
-
 export async function getTeacherPresence(page: number = 1) {
   const limit = 10;
-  const url = `http://localhost:8080/teacherpresence?limit=${limit}&page=${page}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/teacherpresence?limit=${limit}&page=${page}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {

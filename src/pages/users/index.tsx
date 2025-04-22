@@ -111,7 +111,7 @@ export default function Users() {
                         ? "Desativo"
                         : "Em Férias"}
                     </p>
-                    {user.vocation_date && <p>{user.vocation_date}</p>}
+                    {user.vocation_date != "no" && <p>{user.vocation_date}</p>}
                     <button
                       onClick={() => {
                         sessionStorage.setItem("user", JSON.stringify(user));

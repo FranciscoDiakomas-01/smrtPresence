@@ -1,6 +1,5 @@
-
 export async function getAllCalendarByTeacherId(id: number) {
-  const url = `http://localhost:8080/calendar/${id}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/calendar/${id}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -10,10 +9,9 @@ export async function getAllCalendarByTeacherId(id: number) {
   const response = await API.json();
   return response;
 }
-
 
 export async function getAllCalendarByTeacher() {
-  const url = `http://localhost:8080/calendar`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/calendar`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -23,11 +21,10 @@ export async function getAllCalendarByTeacher() {
   const response = await API.json();
   return response;
 }
-
 
 export async function getTeacherCalendarByToken() {
   const token = localStorage.getItem("token");
-  const url = `http://localhost:8080/calendarbytoken`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/calendarbytoken`;
   const API = await fetch(url, {
     headers: {
       authorization: `Bearer ${token}`,
@@ -38,21 +35,20 @@ export async function getTeacherCalendarByToken() {
 }
 
 export async function deleteCalendarVyId(id: number) {
-  const url = `http://localhost:8080/calendar/${id}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/calendar/${id}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
       authorization: `Bearer ${token}`,
     },
-    method : "DELETE"
+    method: "DELETE",
   });
   const response = await API.json();
   return response;
 }
 
-
 export async function getAllNames() {
-  const url = `http://localhost:8080/allteachers`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/allteachers`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -71,7 +67,7 @@ interface calendar {
 }
 export async function CreateCalendar(calendar: calendar) {
   try {
-    const url = `http://localhost:8080/calendar/${calendar.teaherid}`;
+    const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/calendar/${calendar.teaherid}`;
     const token = localStorage.getItem("token");
     const API = await fetch(url, {
       headers: {
@@ -82,8 +78,9 @@ export async function CreateCalendar(calendar: calendar) {
       body: JSON.stringify(calendar),
     });
     const response = await API.json();
+    console.log(response);
     return response;
   } catch (error) {
-    return error as string
+    return error as string;
   }
 }

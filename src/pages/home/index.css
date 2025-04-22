@@ -1,8 +1,8 @@
-#home{
+#home {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding:10px;
+  padding: 10px;
   height: auto;
   padding-bottom: 30px;
   padding-top: 20px;
@@ -10,30 +10,29 @@
   position: relative;
 }
 
-section > div #loader{
+section > div #loader {
   display: flex;
   place-self: center;
   height: 100vh;
   overflow: hidden;
   align-items: center;
   justify-content: center;
-
 }
 
-#home > aside{
+#home > aside {
   width: 99%;
   display: flex;
   justify-content: space-between;
   gap: 20px;
 }
 
-#home > aside span:first-of-type{
+#home > aside span:first-of-type {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   width: 100%;
 }
-#home > aside span:first-of-type div{
+#home > aside span:first-of-type div {
   display: flex;
   position: relative;
   flex-direction: column;
@@ -46,13 +45,13 @@ section > div #loader{
   color: var(--white);
   position: relative;
 }
-#home > aside span:first-of-type div svg{
+#home > aside span:first-of-type div svg {
   position: absolute;
   right: 10px;
   font-size: 90pt;
   opacity: 0.4;
 }
-#home > aside span:first-of-type div button{
+#home > aside span:first-of-type div button {
   width: 200px;
   height: 37px;
   border: none;
@@ -61,13 +60,13 @@ section > div #loader{
   color: var(--blue2);
   font-size: 11pt;
 }
-#home > aside span:first-of-type div h2{
+#home > aside span:first-of-type div h2 {
   font-size: 22pt;
 }
-#home > aside span:first-of-type div h3{
+#home > aside span:first-of-type div h3 {
   font-size: 30pt;
 }
-#home >  button{
+#home > button {
   width: 300px;
   display: flex;
   align-items: center;
@@ -81,22 +80,21 @@ section > div #loader{
   border-radius: 4px;
 }
 
-#home >  span{
+#home > span {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
-
 }
 
-#home >  span > div{
+#home > span > div {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px 50px;
 }
 
-#home >  span > div div{
+#home > span > div div {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding: 20px;
@@ -106,48 +104,47 @@ section > div #loader{
   border-radius: 4px;
 }
 
-#home >  span > div div span{
+#home > span > div div span {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-#home >  span > div div > div span:first-of-type{
+#home > span > div div > div span:first-of-type {
   display: flex;
   width: 80px;
   height: 80px;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-
 }
-#home >  span  article{
+#home > span article {
   width: 97%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-#home >  span  article form{
+#home > span article form {
   display: flex;
   align-items: center;
   gap: 20px;
   font-size: 14pt;
 }
-#home >  span  article button{
+#home > span article button {
   background-color: var(--blue2);
   color: var(--white);
   height: 47px;
   width: 60px;
   margin-left: -20px;
 }
-#home >  span  article input{
+#home > span article input {
   width: 400px;
 }
-#home footer{
+#home footer {
   width: 97%;
   display: flex;
   justify-content: space-between;
 }
-#home footer button{
+#home footer button {
   width: 70px;
   height: 45px;
   background-color: var(--black);
@@ -166,7 +163,7 @@ section > div #loader{
   cursor: pointer;
 }
 
-#home > table td:last-of-type{
+#home > table td:last-of-type {
   width: 220px;
 }
 
@@ -188,7 +185,7 @@ section > div #loader{
   justify-content: center;
   color: var(--white);
 }
-#home table td:nth-of-type(4) button{
+#home table td:nth-of-type(4) button {
   background-color: var(--blue2);
   display: flex;
   align-items: center;
@@ -197,19 +194,25 @@ section > div #loader{
   font-size: 12pt;
 }
 
-#home table tbody tr:hover{
+#home table tbody tr:hover {
   background-color: var(--blue);
 }
 
-@media screen and (max-width : 1024px) {
-  #home > aside span:first-of-type{
-  grid-template-columns: 1fr 1fr ;
+@media screen and (max-width: 1024px) {
+  #home > aside span:first-of-type {
+    grid-template-columns: 1fr 1fr;
+  }
+  #home {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+    height: auto;
+    width: 100%;
+  }
 }
-#home{
-  display: flex;
-  gap: 20px;
-  padding:10px;
-  height: auto;
-  width: 100%;
-}
+
+@media screen and (max-width: 768px) {
+  #home > aside span:first-of-type {
+    grid-template-columns: 1fr;
+  }
 }

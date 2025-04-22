@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ToastContainer } from "react-toastify";
 import "./App.css";
 import SideBar from "./componets/SideBar";
@@ -10,7 +11,7 @@ function App() {
   const [ load , setLoad ] = useState(true)
   const nav = useNavigate()
   useEffect(()=>{
-    if(isLogged()){
+    if(!isLogged()){
       setTimeout(()=>{
         setLoad(false)
       },2500)

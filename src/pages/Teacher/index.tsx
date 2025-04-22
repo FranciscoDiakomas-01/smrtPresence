@@ -1,6 +1,6 @@
 import "./index.css";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { FaBars, FaClock, FaHome, FaQrcode, FaUser } from "react-icons/fa";
+import { FaBars, FaClock, FaHome, FaQrcode } from "react-icons/fa";
 import { useState } from "react";
 import TeacherQrcode  from './componets/QrcodeDisplay'
 import { FaChartBar } from "react-icons/fa6";
@@ -23,11 +23,6 @@ export default function Teacher() {
       name: "Relatório",
       url: "/teacher/merelatory",
       icon: <FaChartBar />,
-    },
-    {
-      name: "Perfil",
-      url: "/teacher/profile",
-      icon: <FaUser />,
     },
   ];
   const nav = useNavigate()

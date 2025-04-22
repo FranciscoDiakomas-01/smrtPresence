@@ -8,7 +8,11 @@ import {
   FaTrash,
   FaUser,
 } from "react-icons/fa";
-import { deleteTeacherByid , getAllTeacherPresence, type IVacation } from "../../services/teacher";
+import {
+  deleteTeacherByid,
+  getAllTeacherPresence,
+  type IVacation,
+} from "../../services/teacher";
 import { Vacation } from "../../services/teacher";
 import { toast } from "react-toastify";
 import Loader from "../../componets/Loader";
@@ -28,37 +32,37 @@ export default function UserDetails() {
     data: Presence[];
     missings: number;
     presence: number;
-    lastpage:number;
+    lastpage: number;
   }
-  interface Presence{
-    date : string,
-    type : string,
-    status : string
+  interface Presence {
+    date: string;
+    type: string;
+    status: string;
   }
   const user: ITeacher = JSON.parse(String(sessionStorage.getItem("user")));
   const [AddFeria, setAddFeria] = useState(false);
   const [presence, setPresence] = useState<IPresence>({
-    data : [],
-    lastpage : 1,
-    missings : 0,
-    presence : 0
+    data: [],
+    lastpage: 1,
+    missings: 0,
+    presence: 0,
   });
 
   const teacher_id = user.id as number;
-  const [page , setPage ] = useState<number>(1)
-  const [ load , setLoad] = useState(true)
-  const [date , setDate] = useState("")
-  useEffect(()=>{
+  const [page, setPage] = useState<number>(1);
+  const [load, setLoad] = useState(true);
+  const [date, setDate] = useState("");
+  useEffect(() => {
     async function getPresence() {
-      const data = await getAllTeacherPresence(page , teacher_id)
+      const data = await getAllTeacherPresence(page, teacher_id);
       data.lastpage = data.lastpage == 0 ? 1 : data.lastpage;
-      setPresence(data)
+      setPresence(data);
     }
-    getPresence()
-    setTimeout(()=>{
-      setLoad(false)
-    },2500)
-  },[page])
+    getPresence();
+    setTimeout(() => {
+      setLoad(false);
+    }, 2500);
+  }, [page]);
   useEffect(() => {
     if (user == null) {
       history.back();
@@ -75,29 +79,34 @@ export default function UserDetails() {
         <>
           {AddFeria && (
             <div id="feria">
-              <form onSubmit={async(e)=>{
-                e.preventDefault()
-                const array = date.split("-")
-                array.reverse()
-                const defDate = array.join("/")
-                const data : IVacation = {
-                  id : user.id,
-                  status : 3,
-                  vacation : defDate
-                }
-                const response = await Vacation(data)
-                if (response?.error) {
-                  toast.error(response?.error);
-                  return
-                }
-                toast.success("Professor em férias")
-
-              }}>
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const array = date.split("-");
+                  array.reverse();
+                  const defDate = array.join("/");
+                  const data: IVacation = {
+                    id: user.id,
+                    status: 3,
+                    vacation: defDate,
+                  };
+                  const response = await Vacation(data);
+                  if (response?.error) {
+                    toast.error(response?.error);
+                    return;
+                  }
+                  toast.success("Professor em férias");
+                }}
+              >
                 <h2>Férias</h2>
                 <label>Data do Final</label>
-                <input type="date" required onChange={(e)=>{
-                  setDate(e.target.value)
-                }} />
+                <input
+                  type="date"
+                  required
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                  }}
+                />
                 <div>
                   <button type="submit">Add Férias</button>
                   <button
@@ -127,7 +136,7 @@ export default function UserDetails() {
                 ? "Desativo"
                 : "Em Férias"}
             </p>
-            {user.vocation_date && <p>{user.vocation_date}</p>}
+            {user.vocation_date != "no" && <p>{user.vocation_date}</p>}
             <div>
               <button
                 onClick={async () => {
@@ -175,10 +184,18 @@ export default function UserDetails() {
                           <p
                             style={{
                               backgroundColor:
-                                data?.status == "1" ? "var(--blue2)": data.status == "3" ? "orange" : "var(--red)",
+                                data?.status == "1"
+                                  ? "var(--blue2)"
+                                  : data.status == "3"
+                                  ? "orange"
+                                  : "var(--red)",
                             }}
                           >
-                            {data?.status == "3" ? "Pendente" : data?.status == "1" ? "Presente" : "Ausente"}
+                            {data?.status == "3"
+                              ? "Pendente"
+                              : data?.status == "1"
+                              ? "Presente"
+                              : "Ausente"}
                           </p>
                         </td>
                       </tr>

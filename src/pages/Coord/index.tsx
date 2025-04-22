@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { FaBars,  FaHome, FaQrcode, FaUser } from "react-icons/fa";
+import { FaBars,  FaHome, FaQrcode } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import QrCodeReader  from './componets/QrcodeDisplay'
 import isLogged from "../../services/isLogged";
@@ -15,11 +15,6 @@ export default function HomeCoord() {
       name: "Inicial",
       url: "/coord",
       icon: <FaHome />,
-    },
-    {
-      name: "Perfil",
-      url: "/coord/profile",
-      icon: <FaUser />,
     },
   ];
   const nav = useNavigate();

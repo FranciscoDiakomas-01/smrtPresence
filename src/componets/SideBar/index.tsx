@@ -4,7 +4,7 @@ import { BsUiChecksGrid } from "react-icons/bs";
 import { LuLogOut, LuUsersRound, LuUser, LuClock } from "react-icons/lu";
 import "./index.css";
 import { useState } from "react";
-import { FaBars, FaCog, FaExclamation } from "react-icons/fa";
+import { FaBars, FaExclamation } from "react-icons/fa";
 
 export default function SideBar() {
   interface IRoutes {
@@ -40,12 +40,6 @@ export default function SideBar() {
       name: "Horário",
       url: "/agenda",
     },
-    {
-      icon: <FaCog />,
-      id: 5,
-      name: "Configurações",
-      url: "/config",
-    },
   ];
 
   const [active, setActive] = useState(1);
@@ -64,7 +58,7 @@ export default function SideBar() {
       <nav
         id="sideBar"
         style={{
-          width: open ? "50%" : "",
+          width: open ? "70%" : "",
         }}
       >
         <div>

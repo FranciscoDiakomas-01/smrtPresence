@@ -74,7 +74,7 @@ export default function Profile() {
       ) : (
         <form onSubmit={update}>
           <span>
-            {name.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
+            {name?.length > 0 && name.charAt(0).toUpperCase() + lastname.charAt(0).toUpperCase()}
           </span>
           <aside>
             <div>

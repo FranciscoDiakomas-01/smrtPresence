@@ -1,15 +1,14 @@
-
-export default async function createPresence(token : string) {
-
+export default async function createPresence(token: string) {
   const data = {
     token_teacher: token,
     date:
-      String(new Date().toLocaleDateString("pt")) + ' --- ' +
+      String(new Date().toLocaleDateString("pt")) +
+      " --- " +
       String(new Date().toLocaleTimeString("pt")),
     hour: String(new Date().getHours()).padStart(2, "0"),
   };
   try {
-    const url = `http://localhost:8080/presence`;
+    const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/presence`;
     const token = localStorage.getItem("token");
     const API = await fetch(url, {
       headers: {
@@ -24,18 +23,16 @@ export default async function createPresence(token : string) {
   } catch (error) {
     return error as string;
   }
-  
 }
 
 export async function updatePresence(token: string) {
   const data = {
     token_teacher: token,
-    date:
-      String(new Date().toLocaleTimeString("pt")),
+    date: String(new Date().toLocaleTimeString("pt")),
     hour: String(new Date().getHours()).padStart(2, "0"),
   };
   try {
-    const url = `http://localhost:8080/presence`;
+    const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/presence`;
     const token = localStorage.getItem("token");
     const API = await fetch(url, {
       headers: {

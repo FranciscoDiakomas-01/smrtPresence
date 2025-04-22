@@ -1,5 +1,6 @@
 export async function DashBoard() {
-  const url = "http://localhost:8080/admin/dash";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/admin/dash";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -11,7 +12,8 @@ export async function DashBoard() {
 }
 
 export async function getAdminData() {
-  const url = "http://localhost:8080/admin";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/admin";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -23,7 +25,8 @@ export async function getAdminData() {
 }
 
 export async function getAdminVariables() {
-  const url = "http://localhost:8080/adminvariable";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/adminvariable";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -44,12 +47,13 @@ interface IADmin {
 
 export async function updateAdmin(adimn: IADmin) {
   if (!adimn.email) {
-    adimn.email = adimn.oldemail
+    adimn.email = adimn.oldemail;
   }
   if (!adimn.password) {
-    adimn.password = adimn.oldpassword
+    adimn.password = adimn.oldpassword;
   }
-  const url = "http://localhost:8080/admin";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/admin";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -69,7 +73,8 @@ interface IVariables {
 }
 
 export async function updateAdminVariables(Variables: IVariables) {
-  const url = "http://localhost:8080/adminvariable";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/adminvariable";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -83,9 +88,8 @@ export async function updateAdminVariables(Variables: IVariables) {
   return response;
 }
 
-
 export async function getAllLatest(page: number = 1) {
-  const url = `http://localhost:8080/presence?page=${page}&limit=15`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/presence?page=${page}&limit=15`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {

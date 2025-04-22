@@ -5,7 +5,7 @@ export interface ICoord {
 }
 export async function getAllCoord(page: number = 1) {
   const limit = 12;
-  const url = `http://localhost:8080/coords?page=${page}&limit=${limit}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coords?page=${page}&limit=${limit}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -16,8 +16,8 @@ export async function getAllCoord(page: number = 1) {
   return response;
 }
 
-export async function getAllCoordBySearch(text : string) {
-  const url = `http://localhost:8080/coords/search/${text}`;
+export async function getAllCoordBySearch(text: string) {
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coords/search/${text}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -29,7 +29,7 @@ export async function getAllCoordBySearch(text : string) {
 }
 
 export async function CoorddeleteByID(id: number) {
-  const url = `http://localhost:8080/coord/${id}`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coord/${id}`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -42,7 +42,7 @@ export async function CoorddeleteByID(id: number) {
 }
 
 export async function getCoorbyId() {
-  const url = `http://localhost:8080/coord`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coord`;
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
@@ -53,7 +53,7 @@ export async function getCoorbyId() {
   return response;
 }
 export async function CoordtoogleStatus(coordid: number, status: boolean) {
-  const url = `http://localhost:8080/coordstatus`;
+  const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coordstatus`;
   const token = localStorage.getItem("token");
   const body = {
     id: coordid,
@@ -73,9 +73,8 @@ export async function CoordtoogleStatus(coordid: number, status: boolean) {
 }
 
 export async function CreateCoord(coord: ICoord) {
-
   try {
-    const url = `http://localhost:8080/coord`;
+    const url = `https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coord`;
     const token = localStorage.getItem("token");
     const API = await fetch(url, {
       headers: {
@@ -88,7 +87,7 @@ export async function CreateCoord(coord: ICoord) {
     const response = await API.json();
     return response;
   } catch (error) {
-    return error as string
+    return error as string;
   }
 }
 
@@ -108,7 +107,8 @@ export async function updateCoord(coord: ICoordUpdate) {
   if (!coord.password) {
     coord.password = coord.oldpassword;
   }
-  const url = "http://localhost:8080/coord";
+  const url =
+    "https://yelping-cora-franciscodiakomas-01-ced8cbf6.koyeb.app/coord";
   const token = localStorage.getItem("token");
   const API = await fetch(url, {
     headers: {
